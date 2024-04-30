@@ -1,0 +1,30 @@
+CREATE DATABASE assignment4;
+USE assignment4;
+CREATE TABLE Customer (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    phone_number VARCHAR(20),
+    address VARCHAR(255)
+);
+
+INSERT INTO Customer (first_name, last_name, email, phone_number, address)
+VALUES ('John', 'bell', 'john@gmail.com', '123-456-7890', 'India');
+VALUES ('Ram', 'Sharma', 'ram@gmail.com', '123-346-2390', 'India');
+VALUES ('Manih', 'Gupta', 'manish@gmail.com', '103-786-4562', 'India');
+
+-- Select all customers
+SELECT * FROM Customer;
+
+-- Select customer by ID
+SELECT * FROM Customer WHERE customer_id = 1;
+
+-- Select customers by name
+SELECT * FROM Customer WHERE first_name = 'Ram' AND last_name = 'Sharma';
+
+-- Update customer email
+UPDATE Customer SET email = 'new_email@example.com' WHERE customer_id = 1;
+
+-- Delete customer by ID
+DELETE FROM Customer WHERE customer_id = 1;
